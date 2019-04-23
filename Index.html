@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+         <script>
+      function validate(){
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      if ( (username == "Admin"|| username=="admin") && password == "Acc")
+      {
+        location="C:/Users/megha.taunk/Desktop/MSPDETAILS/Merge.html"
+          }
+          else{
+        alert("Incorrect Username or password");
+            location="Index.html"
+            }
+          return false;
+          
+      }
+
+      function runScript(e) {
+      if (e.keyCode == 13) {
+
+          validate();
+
+          return false;
+      }
+  }
+window.location.hash="no-back-button";
+window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
+window.onhashchange=function(){window.location.hash="no-back-button";}
+   </script>
+
+	 <body bgcolor="#E6E6FA">
+      <div class="container">
+      <h1 style="text-align:center">Welcome to MySupplier Portal</h1>
+      <form action="" method="post" align="center" target="_blank">
+          Username:<br>
+          <input type="text" name="username" id="username"><br>
+          Password:<br>
+          <input type="password" name="password" id="password" onkeypress="return runScript(event)" required>
+            <br>
+            <br>
+          <input type="button" value="Login" id="submit" onclick="validate()"/>
+      </form>
+      </div>
+  </body>
+</html>
+
+
